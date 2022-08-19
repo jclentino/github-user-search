@@ -1,10 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container } from "@mui/material";
 import Searcher from "./components/Searcher";
-
+import { getGitHubUser } from "./services/users";
 
 const App = ()=>  {
     const [inputUser, setInputUser] = useState('Octocat');
+
+    const gettinUser = async (user)=> {
+        const userResponse = await getGitHubUser(user)
+        console.log(userResponse)
+    }
+
+    useEffect(()=> {
+        gettinUser(inputUser)
+    }, [])
 
     const containerStyles = {
         background: 'whitesmoke',
