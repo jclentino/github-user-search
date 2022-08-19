@@ -4,16 +4,33 @@ import Searcher from "./components/Searcher";
 import { getGitHubUser } from "./services/users";
 
 const App = ()=>  {
-    const [inputUser, setInputUser] = useState('Octocat');
+    const [inputUser, setInputUser] = useState('octocat');
+    const [userState, setUserState] = useState(inputUser)
+    const [notFound, setNotFound] = useState(false)
 
     const gettinUser = async (user)=> {
         const userResponse = await getGitHubUser(user)
-        console.log(userResponse)
+
+        if (userState === 'octocat'){
+            localStorage.setItem('octocat',JSON.stringify(userResponse))
+        }
+
+        if (userResponse.message === 'Not Found'){
+            const { octocat } = localStorage
+            setInputUser(octocat)
+            setUserState(JSON.parse(octocat))
+            setNotFound(true)
+        } else {
+            setUserState(userResponse)
+            setNotFound(false)
+        }
     }
+
+    console.log(userState)
 
     useEffect(()=> {
         gettinUser(inputUser)
-    }, [])
+    }, [inputUser])
 
     const containerStyles = {
         background: 'whitesmoke',
