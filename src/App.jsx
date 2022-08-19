@@ -1,9 +1,22 @@
 import React from "react";
+import { Container } from "@mui/material";
+import Searcher from "./components/Searcher";
 
 const App = ()=>  {
     return (
         <>
-            <div>hola React, estoy de vuelta al ruedo</div>            
+            <Container sx={{
+                background: 'whitesmoke',
+                width: '80vw',
+                height: '500px',
+                borderRadius: '16px',
+                marginTop: '20px',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center'
+            }} >
+            <Searcher />
+            </Container>            
         </>
     );
 }
