@@ -4,20 +4,18 @@ import Searcher from "./components/Searcher";
 
 const App = ()=>  {
     return (
-        <>
-            <Container sx={{
-                background: 'whitesmoke',
-                width: '80vw',
-                height: '500px',
-                borderRadius: '16px',
-                marginTop: '20px',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center'
-            }} >
-            <Searcher />
-            </Container>            
-        </>
+        <Container sx={{
+            background: 'whitesmoke',
+            width: '80vw',
+            height: '500px',
+            borderRadius: '16px',
+            marginTop: '20px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center'
+        }} >
+        <Searcher />
+        </Container>
     );
 }
 
