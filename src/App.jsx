@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Container } from "@mui/material";
 import Searcher from "./components/Searcher";
 import { getGitHubUser } from "./services/users";
+import UserCard from "./containers/UserCard";
 
 const App = ()=>  {
     const [inputUser, setInputUser] = useState('octocat');
@@ -46,6 +47,7 @@ const App = ()=>  {
     return (
         <Container sx={containerStyles}>
             <Searcher inputUser={inputUser} setInputUser={setInputUser} />
+            <UserCard userState={userState} />
         </Container>
     );
 }
