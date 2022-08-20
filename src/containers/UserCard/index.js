@@ -15,7 +15,7 @@ const UserCard = ({ userState }) => {
                 marginTop: '15px',
             }}
         >
-            <Grid item xs={3}>
+            <Grid item xs={3} >
                 <CardMedia 
                     component="img"
                     alt="GitHub User"

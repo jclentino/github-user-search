@@ -44,7 +44,7 @@ const App = ()=>  {
 
     return (
         <Container sx={containerStyles}>
-            <Searcher inputUser={inputUser} setInputUser={setInputUser} />
+            <Searcher inputUser={inputUser} setInputUser={setInputUser} notFound={notFound} />
             <UserCard userState={userState} />
         </Container>
     );
