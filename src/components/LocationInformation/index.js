@@ -9,12 +9,6 @@ const LocationInformation = (props)=> {
     const { userState } = props 
     const { location, twitter_username, blog, company } = userState 
 
-    console.log(location)
-    console.log(twitter_username)
-    console.log(blog)
-    console.log(company)
-
-
     return (
         <>
             <Grid container >
