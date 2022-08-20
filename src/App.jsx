@@ -26,9 +26,7 @@ const App = ()=>  {
             setNotFound(false)
         }
     }
-
-    console.log(userState)
-
+    
     useEffect(()=> {
         gettinUser(inputUser)
     }, [inputUser])

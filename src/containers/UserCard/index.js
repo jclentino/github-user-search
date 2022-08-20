@@ -1,7 +1,11 @@
 import { CardMedia, Grid } from "@mui/material";
 import React from "react";
+import PrincipalInformation from "../../components/PrincipalInformation";
 
-const UserCard = ({ userState: { avatar_url } }) => {
+const UserCard = ({ userState }) => {
+    
+    const { avatar_url } = userState
+
     return (
         <Grid
             contenedor
@@ -17,6 +21,7 @@ const UserCard = ({ userState: { avatar_url } }) => {
             <Grid item xs={9}>
             </Grid>
 
+            <PrincipalInformation userState={userState} />
         </Grid>
     );
 }
